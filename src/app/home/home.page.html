@@ -1,0 +1,48 @@
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Menu Content</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">This is the menu content.</ion-content>
+</ion-menu>
+
+
+<div class="ion-page" id="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-menu-button></ion-menu-button>
+      </ion-buttons>
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+    
+  </ion-header>
+
+  
+  
+  <ion-content [fullscreen]="true" class="ion-padding">
+
+    <ion-item>
+      <ion-input id="miInput" [(ngModel)]="newTodo" placeholder="Add a new task"></ion-input>
+      <ion-button (click)="addTodo()">Add</ion-button>
+    </ion-item>
+
+    
+
+    
+  </ion-content>
+
+  <ion-list>
+      <ion-item *ngFor="let todo of todos; let i = index">
+        {{ todo }}
+        <ion-button fill="clear" color="danger" (click)="removeTodo(i)">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+      </ion-item>
+  </ion-list>
+
+  
+
+
+</div>
